@@ -12,7 +12,7 @@ class Photo(BaseModel):
 from fastapi import FastAPI
 
 app = FastAPI()
-
+'''
 @app.on_event("startup")
 def load_model():
     global midas
@@ -26,12 +26,12 @@ def load_model():
 
     midas_transforms = torch.hub.load("intel-isl/MiDaS", "transforms")
     transform = midas_transforms.dpt_transform
-
+'''
 @app.get('/')
 def index():
     return {'message': 'This is the homepage of the API '}
 
-
+'''
 @app.post('/predict')
 def get_depth(data: Photo):
     received = data.dict()
@@ -55,4 +55,4 @@ def get_depth(data: Photo):
       output = prediction.cpu().numpy().tolist()
 
     return {'depth': output}
-
+'''
