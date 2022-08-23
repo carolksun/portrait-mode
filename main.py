@@ -32,7 +32,7 @@ def load_model():
 def index():
     return {'message': 'This is the homepage of the API '}
 
-'''
+
 @app.post('/predict')
 def get_depth(data: Photo):
     received = data.dict()
@@ -56,4 +56,4 @@ def get_depth(data: Photo):
       output = prediction.cpu().numpy().tolist()
 
     return {'depth': output}
-'''
+
