@@ -21,11 +21,13 @@ def load_model():
     model_type = "DPT_Large"
     midas = torch.hub.load("intel-isl/MiDaS", model_type, trust_repo=True)
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+    '''
     midas.to(device)
     midas.eval()
 
     midas_transforms = torch.hub.load("intel-isl/MiDaS", "transforms")
     transform = midas_transforms.dpt_transform
+    '''
 
 @app.get('/')
 def index():
