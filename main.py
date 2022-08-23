@@ -18,7 +18,7 @@ def load_model():
     global midas
     global transform
     global device
-    model_type = "DPT_Large"
+    model_type = "DPT_Hybrid"
     midas = torch.hub.load("intel-isl/MiDaS", model_type, trust_repo=True)
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
     '''
